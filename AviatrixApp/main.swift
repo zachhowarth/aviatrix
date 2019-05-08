@@ -2,7 +2,7 @@
 //  main.swift
 //  AviatrixApp
 //
-//  Created by Amy Holt on 6/10/18.
+//  Edited by Zach Howarth on 5/8/2019.
 //  Copyright © 2018 Amy Holt. All rights reserved.
 //
 
@@ -13,11 +13,11 @@ func gauges(myPlane : Aviatrix) {
     print(" ")
     print("| Running:  | ✅")
     print("| Location:  | \(myPlane.currentLocation)")
-    //    print("| Distance:  | \(myPlane.distanceTraveled) miles")
-    //    print("| Fuel:      | \(myPlane.fuelLevel) gallons")
-    //    print("| Max Fuel:  | \(myPlane.maxFuel) gallons")
-    //    print("| MPG:       | \(myPlane.milesPerGallon)")
-    //    print("| Fuel Bill: | \(myPlane.fuelCost)")
+    print("| Distance:  | \(myPlane.distanceTraveled) miles")
+    print("| Fuel:      | \(myPlane.fuelLevel) gallons")
+    print("| Max Fuel:  | \(myPlane.maxFuel) gallons")
+    print("| MPG:       | \(myPlane.milesPerGallon)")
+    print("| Fuel Bill: | $\(myPlane.fuelCost)")
 }
 
 func fly(myPlane : Aviatrix) {
@@ -52,11 +52,12 @@ func fly(myPlane : Aviatrix) {
 }
 
 func refuel(myPlane : Aviatrix) {
-    let refuelData = myPlane.refuel()
+    _ = myPlane.refuel()
+    let data = AviatrixData().fuelPrices
     
     print("Refueling...")
-    print("⛽ Here in _________, jet fuel costs _________")
-    print("⛽ You refueled _________ gallons totaling _________")
+    print("⛽ Here in \(myPlane.currentLocation), jet fuel costs $\(data[myPlane.currentLocation]!)")
+    print("⛽ You refueled \(myPlane.refuel()) gallons totaling $\(myPlane.fuelCost)")
 }
 
 func fuelCheck(myPlane : Aviatrix, destination : String) -> Bool {

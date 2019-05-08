@@ -2,7 +2,7 @@
 //  AviatrixData.swift
 //  AviatrixApp
 //
-//  Created by Amy Holt on 6/10/18.
+//  Edited by Zach Howarth on 5/8/2019.
 //  Copyright © 2018 Amy Holt. All rights reserved.
 //
 
